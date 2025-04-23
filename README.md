@@ -1,122 +1,154 @@
-# 🛶 Floating Body with Adjustable Buoyancy
+# 🛶 Floating Body With Adjustable Buoyancy
 
-> A smart buoyancy-control system using a dual-pump mechanism for precision water displacement.
-
-## 📌 Overview
-
-This project demonstrates the **design and implementation** of a **floating body with adjustable submersion levels**, controlled in real-time using a water intake and drainage system. The system applies principles from **fluid mechanics** and **buoyancy** using **PVC-based construction**, **arduino-pump control**, and **metacentric height testing**.
-
-> Developed as part of the ME303 Thermo-Fluid Lab.
+> An experimental prototype that demonstrates dynamic buoyancy control and floating body stability using a dual-pump PVC system. Applicable to marine and defense industries for intelligent submerged systems.
 
 ---
 
-## 🎯 Objectives
+## 📌 Project Overview
 
-- 🔧 Design a sealed cylindrical floating body using PVC and acrylic
-- 📉 Implement a dual-pump system to dynamically control buoyancy
-- 🧪 Analyze stability using metacenter (M) and center of gravity (G) relationships
-- 🧠 Apply Archimedes' principle to determine equilibrium
+This project demonstrates the stability of floating bodies and real-time adjustable buoyancy using a dual-pump system inside a sealed PVC pipe structure. The setup allows precise submersion control between 10% to 90% of the body’s volume.
+
+Designed for experimental, marine, and defense applications such as:
+- 🛳️ Ships and underwater vehicles
+- 🛡️ Torpedoes, naval mines, and autonomous aquatic drones
 
 ---
 
-## ⚙️ Components Used
+## 🎯 Motivation
 
+Understanding and demonstrating concepts like **metacentric height**, **center of gravity**, and **Archimedes’ Principle** is crucial for both academic and industrial marine design.
+
+This project bridges theoretical understanding and practical implementation of:
+- Controlled buoyancy systems
+- Submersion dynamics and fluid stability
+- Structural design for floating systems
+
+---
+
+## 🧪 Project Goals
+
+- ✅ Design and build a floating cylindrical body with sealed ends
+- ✅ Implement a pump-driven system to control the internal water level (i.e., weight)
+- ✅ Maintain and measure stability at different submerged states
+- ✅ Experimentally calculate the **metacentric height (GM)** and observe its effects on stability
+
+---
+
+## 🧱 Experimental Design
+
+### 🔧 Materials Used
 | Component        | Description                                      |
 |------------------|--------------------------------------------------|
-| **PVC Pipe**     | Ø16cm, Length: 27cm — Main body                  |
-| **Acrylic Sheets** | Ø16cm — Seals at both ends                     |
-| **Pumps**        | 1 inlet + 1 outlet submersible DC pump           |
-| **Adhesive**     | Araldite — Waterproof bonding                    |
-| **Controller**   | Arduino Uno with manual switch interface         |
+| **PVC Pipe**     | Ø16cm, Length: 27cm — Main structure              |
+| **Acrylic Sheets** | Ø16cm — Sealed ends for waterproofing          |
+| **Araldite**     | Waterproof adhesive to secure acrylic ends       |
+| **Pumps**        | 1 inlet + 1 outlet submersible DC pumps          |
+| **Miscellaneous**| Valves, tubing, mounting frame, manual switch   |
+
+### 📐 Volume Calculations
+- **Volume of Cylinder**:  
+  \( V = \pi R^2 h = 3.14 \times 0.08^2 \times 0.27 = 5.4 \, L \)
+- **Pipe Density**: 1330 kg/m³  
+- **Buoyant Force**: Calculated via Archimedes' Principle \( F_b = \rho V g \)
 
 ---
 
-## 🔬 Working Mechanism
+## ⚙️ Working Mechanism
 
-The floating body contains a **hollow chamber** to manage water volume. Two pumps:
-- 🟢 *Inlet pump* increases weight → more submersion
-- 🔴 *Outlet pump* reduces water → less submersion
+- 💧 **Water Intake** increases weight → more submersion  
+- 💨 **Water Drainage** reduces weight → less submersion  
+- 🧠 System is manually controlled via switchboard interface connected to pumps
 
 <details>
-<summary>Click to view full working animation and experiment setup images</summary>
+<summary>🖼 Click to view setup and mechanism visuals</summary>
 
 ![Design Diagram](docs/design_diagram.png)  
-![Full Setup](media/full_setup_photo.jpg)  
+![Prototype Setup](media/full_setup_photo.jpg)  
 ![Working Mechanism](docs/working_mechanism.gif)
 
 </details>
 
 ---
 
-## 📈 Experimental Observations
+## 📊 Experimental Results
 
-### Filling Time Analysis:
+### 🧃 Filling Timings:
 
-| Submersion % | Time (s) |
-|--------------|----------|
-| 25%          | 6        |
-| 50%          | 9.12     |
-| 75%          | 6.17     |
-| 100%         | 2.71     |
+| Submersion % | Time Taken (s) |
+|--------------|----------------|
+| 25%          | 6.00           |
+| 50%          | 9.12           |
+| 75%          | 6.17           |
+| 100%         | 2.71           |
 
-### Emptying Time Analysis:
+### 🌊 Emptying Timings:
 
-| From (%) | To (%) | Time (s) |
-|----------|--------|----------|
-| 100      | 75     | 60       |
-| 75       | 50     | 70       |
-| 50       | 25     | 85       |
+| From → To (%) | Time Taken (s) |
+|---------------|----------------|
+| 100 → 75      | 60             |
+| 75 → 50       | 70             |
+| 50 → 25       | 85             |
+| 25 → 0 (2.5cm) | 45             |
 
-![Submersion Time Graph](media/submersion_graphs.png)
-
----
-
-## 📐 Metacentric Height (Stability Test)
-
-- ✅ *Stable:* When M > G → Restoring torque observed
-- ❌ *Unstable:* When G > M → Capsizing behavior
-
-![Stability Setup](media/metacentric_experiment.png)
+![Graph](media/submersion_graphs.png)
 
 ---
 
-## 💡 Learnings & Future Work
+## 🧠 Stability Analysis
 
-- Precision in **GM calculations** is crucial for marine design
-- Enhance control via **automatic feedback loops (water sensor + Arduino PID)**
-- Miniaturize design for **underwater ROVs, sensor platforms**
+**Metacentric Height (GM):**
+- Stable when M > G → Body returns to upright position
+- Unstable when G > M → Tendency to capsize
 
----
+Observed experimentally using tilt method and plotted:
+- Tilt angle vs displacement of center of buoyancy
+- Restoration behavior based on metacenter location
 
-## 📁 Project Files
-
-- [`floating_body_project_report.pdf`](report/floating_body_project_report.pdf)
-- [`arduino_pump_controller.ino`](src/arduino_pump_controller.ino)
-
----
-
-## 🛠️ Setup Instructions
-
-1. Connect pumps to Arduino via relays
-2. Use switches or serial input to activate fill/empty
-3. Monitor submersion visually or via ultrasonic sensor (future upgrade)
+![Stability Test](media/metacentric_experiment.png)
 
 ---
 
-## 📜 License
+## 💡 Key Features
 
-MIT License — Feel free to adapt for research or academic use!
+- ✅ Real-time submersion adjustment (10%–90%)
+- ✅ Accurate observation of restoring torque
+- ✅ Visualization of fluid dynamics and stability theory
+- ✅ Portable and modular setup for future iterations
+
+---
+
+
+---
+
+## 🌍 Applications
+
+### 🛳️ Marine Engineering:
+- Buoyancy-controlled floats
+- Ship stability modeling
+- Smart mooring systems
+
+### 🛡️ Defense:
+- Torpedoes & underwater drones
+- Smart naval mines
+- Research submersibles
+
+---
+
+## 🚀 Future Improvements
+
+- Integrate ultrasonic water level sensors  
+- Automate pump control using PID feedback system  
+- Wireless data logging for real-time analysis  
+- CFD modeling for further performance prediction  
 
 ---
 
 ## ✍️ Authors
 
-- **[Your Full Name]** — Mechanical Engineering @ [Your Institute]
-- **Mentor/Guide** (if applicable)
+- **Priyanshu Rao** – Mechanical Engineering @ [IIT ROPAR]  
+- **Faculty/Guide Name** – Chandra Shekhar Sharma (IIT ROPAR)
 
 ---
 
-## 🤝 Contributions
 
-Pull requests are welcome for improvements or alternative control algorithms!
 
