@@ -63,7 +63,7 @@ This project bridges theoretical understanding and practical implementation of:
 <summary>🖼 Click to view setup and mechanism visuals</summary>
 
 ![Design Diagram](docs/design_diagram.png)  
-![Prototype Setup](media/full_setup_photo.jpg)  
+![Prototype Setup](https://github.com/user-attachments/assets/42f2f616-7cdb-45d4-b936-3ac8d98dff50)  
 ![Working Mechanism](docs/working_mechanism.gif)
 
 </details>
