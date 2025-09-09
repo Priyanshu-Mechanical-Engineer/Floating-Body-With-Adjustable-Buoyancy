@@ -90,7 +90,7 @@ This project bridges theoretical understanding and practical implementation of:
 | 50 → 25       | 85             |
 | 25 → 0 (2.5cm) | 45             |
 
-![Graph](media/submersion_graphs.png)
+
 
 ---
 
@@ -104,7 +104,7 @@ Observed experimentally using tilt method and plotted:
 - Tilt angle vs displacement of center of buoyancy
 - Restoration behavior based on metacenter location
 
-![Stability Test](media/metacentric_experiment.png)
+![Stability Test](https://1drv.ms/i/c/2fef47759d42cb3b/EW9dNOyRpH5EnleABl1ySbUBGes0Hxh7WplaAHuVJsGO7A?e=BK5vF8)
 
 ---
 
